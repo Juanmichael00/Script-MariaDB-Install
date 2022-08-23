@@ -1,0 +1,42 @@
+#Instalação do banco de Dados MariaDB
+
+
+
+sudo apt install curl apt-transport-https software-properties-common lsb-release ca-certificates gnupg2 -y
+sudo curl -LsS -O https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+sudo bash mariadb_repo_setup --mariadb-server-version=10.7
+sudo apt update
+sudo apt install mariadb-server mariadb-client -y
+sudo systemctl enable mariadb
+
+sudo mariadb-secure-installation -y - verificar como vai ser feito no bootstrap
+dar y em todas opções, setar senha de root
+
+
+
+service mysql status
+
+
+  abrir o banco
+mysql -u root -p
+
+Cria um banco de dados
+
+CREATE DATABASE wordpressbd CHARACTER SET UTF8 COLLATE UTF8_BIN;
+
+Cria um usuário dentro do banco
+
+CREATE USER 'juan'@'%' IDENTIFIED BY 'senhadousuario';
+
+Atribui permissão a um usuario a acessar o banco
+
+GRANT ALL PRIVILEGES ON wordpressbd.* TO 'nomedousuario'@'%';
+
+FLUSH PRIVILEGES;
+
+
+
+
+
+
+
