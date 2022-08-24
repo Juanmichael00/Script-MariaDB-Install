@@ -17,7 +17,7 @@ dar y em todas opções, setar senha de root
 service mysql status
 
 
-  abrir o banco
+  abrir o bancoadwawdawd
 mysql -u root -p
 
 Cria um banco de dados
